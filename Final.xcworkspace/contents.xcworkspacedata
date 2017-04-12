@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/a00924319/Documents/xcode/FinalProjectBulletPhysics/FinalProjectBulletPhysics.xcodeproj">
+      location = "group:FinalProjectBulletPhysics.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:/Users/a00924319/Documents/xcode/FinalProjectBulletPhysics/FinalProjectCube.xcodeproj">
+      location = "group:FinalProjectCube.xcodeproj">
    </FileRef>
 </Workspace>

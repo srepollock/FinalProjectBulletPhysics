@@ -71,7 +71,7 @@ GLint uniforms[NUM_UNIFORMS];
     GLuint _squarevertexArray;
     GLuint _squarevertexBuffers[3];
     GLuint _squareindexBuffer;
-    GLKMatrix4 _ballModelViewMatrix, _floorModelViewMatrix;
+    GLKMatrix4 _ballModelViewMatrix, _floorModelViewMatrix, _ballModelViewProjectionMatrix, _floorModelViewProjectionMatrix;
     GLKMatrix3 _ballNormalMatrix, _floorNormalMatrix;
     GLfloat _platformAngle;
     GLuint sphereNumVerts, squareNumVerts;
@@ -304,8 +304,8 @@ GLint uniforms[NUM_UNIFORMS];
     GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -4.0f);
     //    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
     
-    // Set up model view matrix (place model in world)
-    _modelViewMatrix = GLKMatrix4Identity;
+//     Set up model view matrix (place model in world)
+//    _modelViewMatrix = GLKMatrix4Identity;
     _ballModelViewMatrix = GLKMatrix4Identity;
     _floorModelViewMatrix = GLKMatrix4Identity;
     // ball pos
@@ -315,9 +315,9 @@ GLint uniforms[NUM_UNIFORMS];
     _floorModelViewMatrix = GLKMatrix4Scale(_floorModelViewMatrix, 7.0, 1.0, 5.0);
     _floorModelViewMatrix = GLKMatrix4Translate(_floorModelViewMatrix, bp->floorPos.x, bp->floorPos.y, bp->floorPos.z);
     
-    _modelViewMatrix = GLKMatrix4Multiply(_modelViewMatrix, _ballModelViewMatrix);
-    _modelViewMatrix = GLKMatrix4Multiply(_modelViewMatrix, _floorModelViewMatrix);
-    _modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, _modelViewMatrix);
+    _ballModelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, _ballModelViewMatrix);
+    _floorModelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, _floorModelViewMatrix);
+//    _modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, _modelViewMatrix);
     
 //    _modelViewMatrix = GLKMatrix4Identity;
 //    _modelViewMatrix = GLKMatrix4Rotate(_modelViewMatrix, xRot, 1.0f, 0.0f, 0.0f);
@@ -326,7 +326,7 @@ GLint uniforms[NUM_UNIFORMS];
 //    _modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, _modelViewMatrix);
     
     // Calculate normal matrix
-    _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(_modelViewMatrix), NULL);
+//    _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(_modelViewMatrix), NULL);
     
     // Calculate projection matrix
     float aspect = fabs(self.view.bounds.size.width / self.view.bounds.size.height);
@@ -334,7 +334,9 @@ GLint uniforms[NUM_UNIFORMS];
     
     _ballNormalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(_ballModelViewMatrix), NULL);
     _floorNormalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(_floorModelViewMatrix), NULL);
-    _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, _modelViewMatrix);
+    
+    _ballModelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, _ballModelViewMatrix);
+    _floorModelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, _floorModelViewMatrix);
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
@@ -349,7 +351,7 @@ GLint uniforms[NUM_UNIFORMS];
     glUseProgram(_program);
     
     // Set up uniforms
-    glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, _modelViewProjectionMatrix.m);
+    glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, _ballModelViewProjectionMatrix.m);
     glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, _ballNormalMatrix.m);
     glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEW_MATRIX], 1, 0, _ballModelViewMatrix.m);
     /* set lighting parameters... */
@@ -372,7 +374,7 @@ GLint uniforms[NUM_UNIFORMS];
     glUseProgram(_program);
     
     // Set up uniforms
-    glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, _modelViewProjectionMatrix.m);
+    glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, _floorModelViewProjectionMatrix.m);
     glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, _floorNormalMatrix.m);
     glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEW_MATRIX], 1, 0, _floorModelViewMatrix.m);
     /* set lighting parameters... */
