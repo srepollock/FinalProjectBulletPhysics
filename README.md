@@ -9,3 +9,6 @@ Spencer Pollock
 
 ## Bullet Physics
 - tap: drop ball
+
+### NOTE:
+> Bullet physcis had a lot of help and reference from Carson. We looked over the stuff yesterday
