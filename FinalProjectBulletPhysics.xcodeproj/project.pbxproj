@@ -15,6 +15,7 @@
 		5847E27C1E9E9F8D00DC770F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5847E27A1E9E9F8D00DC770F /* Main.storyboard */; };
 		5847E27E1E9E9F8D00DC770F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5847E27D1E9E9F8D00DC770F /* Assets.xcassets */; };
 		5847E2811E9E9F8D00DC770F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5847E27F1E9E9F8D00DC770F /* LaunchScreen.storyboard */; };
+		5847E2891E9EA17100DC770F /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2881E9EA17100DC770F /* crate.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5847E27D1E9E9F8D00DC770F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5847E2801E9E9F8D00DC770F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5847E2821E9E9F8D00DC770F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5847E2881E9EA17100DC770F /* crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = crate.jpg; path = FinalProjectBulletPhysics/crate.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		5847E2611E9E9F8D00DC770F = {
 			isa = PBXGroup;
 			children = (
+				5847E2881E9EA17100DC770F /* crate.jpg */,
 				5847E26C1E9E9F8D00DC770F /* FinalProjectBulletPhysics */,
 				5847E26B1E9E9F8D00DC770F /* Products */,
 			);
@@ -146,6 +149,7 @@
 				5847E27C1E9E9F8D00DC770F /* Main.storyboard in Resources */,
 				5847E2761E9E9F8D00DC770F /* Shader.vsh in Resources */,
 				5847E27E1E9E9F8D00DC770F /* Assets.xcassets in Resources */,
+				5847E2891E9EA17100DC770F /* crate.jpg in Resources */,
 				5847E2811E9E9F8D00DC770F /* LaunchScreen.storyboard in Resources */,
 				5847E2741E9E9F8D00DC770F /* Shader.fsh in Resources */,
 			);
