@@ -19,6 +19,37 @@
 		5847E2D81E9EAB4300DC770F /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2CE1E9EAB4300DC770F /* Shader.vsh */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5847EE301E9EAEF800DC770F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5847EE281E9EAEF800DC770F /* BulletTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0294A35A1ABC85B300B119B8;
+			remoteInfo = BulletTest;
+		};
+		5847EE321E9EAEF800DC770F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5847EE281E9EAEF800DC770F /* BulletTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0294A3731ABC85B300B119B8;
+			remoteInfo = BulletTestTests;
+		};
+		5847EE391E9EAF0200DC770F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5847EE341E9EAF0200DC770F /* BulletTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0294A35A1ABC85B300B119B8;
+			remoteInfo = BulletTest;
+		};
+		5847EE3B1E9EAF0200DC770F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5847EE341E9EAF0200DC770F /* BulletTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0294A3731ABC85B300B119B8;
+			remoteInfo = BulletTestTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5847E26A1E9E9F8D00DC770F /* FinalProjectCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProjectCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5847E2C01E9EAB4300DC770F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,6 +64,8 @@
 		5847E2CB1E9EAB4300DC770F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5847E2CD1E9EAB4300DC770F /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
 		5847E2CE1E9EAB4300DC770F /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		5847EE281E9EAEF800DC770F /* BulletTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BulletTest.xcodeproj; sourceTree = "<group>"; };
+		5847EE341E9EAF0200DC770F /* BulletTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BulletTest.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +82,8 @@
 		5847E2611E9E9F8D00DC770F = {
 			isa = PBXGroup;
 			children = (
+				5847EE341E9EAF0200DC770F /* BulletTest.xcodeproj */,
+				5847EE281E9EAEF800DC770F /* BulletTest.xcodeproj */,
 				5847E2BF1E9EAB4300DC770F /* FinalProjectCube */,
 				5847E26B1E9E9F8D00DC770F /* Products */,
 			);
@@ -87,6 +122,24 @@
 				5847E2CE1E9EAB4300DC770F /* Shader.vsh */,
 			);
 			path = Shaders;
+			sourceTree = "<group>";
+		};
+		5847EE291E9EAEF800DC770F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5847EE311E9EAEF800DC770F /* BulletTest.app */,
+				5847EE331E9EAEF800DC770F /* BulletTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5847EE351E9EAF0200DC770F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5847EE3A1E9EAF0200DC770F /* BulletTest.app */,
+				5847EE3C1E9EAF0200DC770F /* BulletTestTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,12 +188,53 @@
 			mainGroup = 5847E2611E9E9F8D00DC770F;
 			productRefGroup = 5847E26B1E9E9F8D00DC770F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5847EE291E9EAEF800DC770F /* Products */;
+					ProjectRef = 5847EE281E9EAEF800DC770F /* BulletTest.xcodeproj */;
+				},
+				{
+					ProductGroup = 5847EE351E9EAF0200DC770F /* Products */;
+					ProjectRef = 5847EE341E9EAF0200DC770F /* BulletTest.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5847E2691E9E9F8D00DC770F /* FinalProjectCube */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5847EE311E9EAEF800DC770F /* BulletTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = BulletTest.app;
+			remoteRef = 5847EE301E9EAEF800DC770F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5847EE331E9EAEF800DC770F /* BulletTestTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BulletTestTests.xctest;
+			remoteRef = 5847EE321E9EAEF800DC770F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5847EE3A1E9EAF0200DC770F /* BulletTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = BulletTest.app;
+			remoteRef = 5847EE391E9EAF0200DC770F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5847EE3C1E9EAF0200DC770F /* BulletTestTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BulletTestTests.xctest;
+			remoteRef = 5847EE3B1E9EAF0200DC770F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5847E2681E9E9F8D00DC770F /* Resources */ = {

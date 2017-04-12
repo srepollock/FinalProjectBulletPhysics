@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		025194401ABC8D4800D3986E /* libBulletCollision_xcode4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0294A3A31ABC869B00B119B8 /* libBulletCollision_xcode4.a */; };
+		025194411ABC8D4800D3986E /* libBulletDynamics_xcode4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0294A3A61ABC869B00B119B8 /* libBulletDynamics_xcode4.a */; };
+		025194421ABC8D4800D3986E /* libLinearMath_xcode4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0294A3A91ABC869B00B119B8 /* libLinearMath_xcode4.a */; };
+		0294A3601ABC85B300B119B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294A35F1ABC85B300B119B8 /* main.m */; };
+		0294A3631ABC85B300B119B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294A3621ABC85B300B119B8 /* AppDelegate.m */; };
+		0294A3661ABC85B300B119B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294A3651ABC85B300B119B8 /* ViewController.m */; };
+		0294A3691ABC85B300B119B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0294A3671ABC85B300B119B8 /* Main.storyboard */; };
+		0294A36B1ABC85B300B119B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0294A36A1ABC85B300B119B8 /* Images.xcassets */; };
+		0294A36E1ABC85B300B119B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0294A36C1ABC85B300B119B8 /* LaunchScreen.xib */; };
+		0294A3AE1ABC870A00B119B8 /* BulletPhysics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0294A3AD1ABC870A00B119B8 /* BulletPhysics.mm */; };
+		5847FE091E9EB2C400DC770F /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5847FE081E9EB2C400DC770F /* crate.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0294A3741ABC85B300B119B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0294A3521ABC85B300B119B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0294A3591ABC85B300B119B8;
+			remoteInfo = BulletTest;
+		};
+		0294A3A21ABC869B00B119B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0294A3981ABC869A00B119B8 /* BulletCollision.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 00F910446A7A0F0B35354C36;
+			remoteInfo = BulletCollision;
+		};
+		0294A3A51ABC869B00B119B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0294A39B1ABC869A00B119B8 /* BulletDynamics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6F2F2EFF051123D7327667AF;
+			remoteInfo = BulletDynamics;
+		};
+		0294A3A81ABC869B00B119B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0294A39E1ABC869A00B119B8 /* LinearMath.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 66C4782A307D15BD5BC427CF;
+			remoteInfo = LinearMath;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0294A35A1ABC85B300B119B8 /* FinalProjectBulletPhysics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProjectBulletPhysics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0294A35E1ABC85B300B119B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0294A35F1ABC85B300B119B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0294A3611ABC85B300B119B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0294A3621ABC85B300B119B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0294A3641ABC85B300B119B8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0294A3651ABC85B300B119B8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0294A3681ABC85B300B119B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0294A36A1ABC85B300B119B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0294A36D1ABC85B300B119B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0294A3731ABC85B300B119B8 /* FinalProjectBulletPhysicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalProjectBulletPhysicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0294A3981ABC869A00B119B8 /* BulletCollision.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletCollision.xcodeproj; path = "BulletTest/bullet-2.82-r2704/build/xcode4ios/BulletCollision.xcodeproj"; sourceTree = "<group>"; };
+		0294A39B1ABC869A00B119B8 /* BulletDynamics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BulletDynamics.xcodeproj; path = "BulletTest/bullet-2.82-r2704/build/xcode4ios/BulletDynamics.xcodeproj"; sourceTree = "<group>"; };
+		0294A39E1ABC869A00B119B8 /* LinearMath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LinearMath.xcodeproj; path = "BulletTest/bullet-2.82-r2704/build/xcode4ios/LinearMath.xcodeproj"; sourceTree = "<group>"; };
+		0294A3AD1ABC870A00B119B8 /* BulletPhysics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BulletPhysics.mm; sourceTree = "<group>"; };
+		0294A3AF1ABC872100B119B8 /* BulletPhysics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BulletPhysics.h; sourceTree = "<group>"; };
+		5847FE081E9EB2C400DC770F /* crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crate.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0294A3571ABC85B300B119B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				025194401ABC8D4800D3986E /* libBulletCollision_xcode4.a in Frameworks */,
+				025194411ABC8D4800D3986E /* libBulletDynamics_xcode4.a in Frameworks */,
+				025194421ABC8D4800D3986E /* libLinearMath_xcode4.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0294A3701ABC85B300B119B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0294A3511ABC85B300B119B8 = {
+			isa = PBXGroup;
+			children = (
+				0294A3981ABC869A00B119B8 /* BulletCollision.xcodeproj */,
+				0294A39B1ABC869A00B119B8 /* BulletDynamics.xcodeproj */,
+				0294A39E1ABC869A00B119B8 /* LinearMath.xcodeproj */,
+				0294A35C1ABC85B300B119B8 /* BulletPhysics */,
+				0294A35B1ABC85B300B119B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0294A35B1ABC85B300B119B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0294A35A1ABC85B300B119B8 /* FinalProjectBulletPhysics.app */,
+				0294A3731ABC85B300B119B8 /* FinalProjectBulletPhysicsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0294A35C1ABC85B300B119B8 /* BulletPhysics */ = {
+			isa = PBXGroup;
+			children = (
+				5847FE081E9EB2C400DC770F /* crate.jpg */,
+				0294A3AF1ABC872100B119B8 /* BulletPhysics.h */,
+				0294A3AD1ABC870A00B119B8 /* BulletPhysics.mm */,
+				0294A3611ABC85B300B119B8 /* AppDelegate.h */,
+				0294A3621ABC85B300B119B8 /* AppDelegate.m */,
+				0294A3641ABC85B300B119B8 /* ViewController.h */,
+				0294A3651ABC85B300B119B8 /* ViewController.m */,
+				0294A3671ABC85B300B119B8 /* Main.storyboard */,
+				0294A36A1ABC85B300B119B8 /* Images.xcassets */,
+				0294A36C1ABC85B300B119B8 /* LaunchScreen.xib */,
+				0294A35D1ABC85B300B119B8 /* Supporting Files */,
+			);
+			name = BulletPhysics;
+			path = BulletTest;
+			sourceTree = "<group>";
+		};
+		0294A35D1ABC85B300B119B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0294A35E1ABC85B300B119B8 /* Info.plist */,
+				0294A35F1ABC85B300B119B8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0294A3991ABC869A00B119B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0294A3A31ABC869B00B119B8 /* libBulletCollision_xcode4.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0294A39C1ABC869A00B119B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0294A3A61ABC869B00B119B8 /* libBulletDynamics_xcode4.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0294A39F1ABC869A00B119B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0294A3A91ABC869B00B119B8 /* libLinearMath_xcode4.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0294A3591ABC85B300B119B8 /* FinalProjectBulletPhysics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0294A37D1ABC85B300B119B8 /* Build configuration list for PBXNativeTarget "FinalProjectBulletPhysics" */;
+			buildPhases = (
+				0294A3561ABC85B300B119B8 /* Sources */,
+				0294A3571ABC85B300B119B8 /* Frameworks */,
+				0294A3581ABC85B300B119B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinalProjectBulletPhysics;
+			productName = BulletTest;
+			productReference = 0294A35A1ABC85B300B119B8 /* FinalProjectBulletPhysics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0294A3721ABC85B300B119B8 /* FinalProjectBulletPhysicsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0294A3801ABC85B300B119B8 /* Build configuration list for PBXNativeTarget "FinalProjectBulletPhysicsTests" */;
+			buildPhases = (
+				0294A36F1ABC85B300B119B8 /* Sources */,
+				0294A3701ABC85B300B119B8 /* Frameworks */,
+				0294A3711ABC85B300B119B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0294A3751ABC85B300B119B8 /* PBXTargetDependency */,
+			);
+			name = FinalProjectBulletPhysicsTests;
+			productName = BulletTestTests;
+			productReference = 0294A3731ABC85B300B119B8 /* FinalProjectBulletPhysicsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0294A3521ABC85B300B119B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = BCIT;
+				TargetAttributes = {
+					0294A3591ABC85B300B119B8 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					0294A3721ABC85B300B119B8 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 0294A3591ABC85B300B119B8;
+					};
+				};
+			};
+			buildConfigurationList = 0294A3551ABC85B300B119B8 /* Build configuration list for PBXProject "FinalProjectBulletPhysics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				English,
+			);
+			mainGroup = 0294A3511ABC85B300B119B8;
+			productRefGroup = 0294A35B1ABC85B300B119B8 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0294A3991ABC869A00B119B8 /* Products */;
+					ProjectRef = 0294A3981ABC869A00B119B8 /* BulletCollision.xcodeproj */;
+				},
+				{
+					ProductGroup = 0294A39C1ABC869A00B119B8 /* Products */;
+					ProjectRef = 0294A39B1ABC869A00B119B8 /* BulletDynamics.xcodeproj */;
+				},
+				{
+					ProductGroup = 0294A39F1ABC869A00B119B8 /* Products */;
+					ProjectRef = 0294A39E1ABC869A00B119B8 /* LinearMath.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0294A3591ABC85B300B119B8 /* FinalProjectBulletPhysics */,
+				0294A3721ABC85B300B119B8 /* FinalProjectBulletPhysicsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0294A3A31ABC869B00B119B8 /* libBulletCollision_xcode4.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBulletCollision_xcode4.a;
+			remoteRef = 0294A3A21ABC869B00B119B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0294A3A61ABC869B00B119B8 /* libBulletDynamics_xcode4.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBulletDynamics_xcode4.a;
+			remoteRef = 0294A3A51ABC869B00B119B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0294A3A91ABC869B00B119B8 /* libLinearMath_xcode4.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLinearMath_xcode4.a;
+			remoteRef = 0294A3A81ABC869B00B119B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0294A3581ABC85B300B119B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0294A3691ABC85B300B119B8 /* Main.storyboard in Resources */,
+				0294A36E1ABC85B300B119B8 /* LaunchScreen.xib in Resources */,
+				0294A36B1ABC85B300B119B8 /* Images.xcassets in Resources */,
+				5847FE091E9EB2C400DC770F /* crate.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0294A3711ABC85B300B119B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0294A3561ABC85B300B119B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0294A3661ABC85B300B119B8 /* ViewController.m in Sources */,
+				0294A3AE1ABC870A00B119B8 /* BulletPhysics.mm in Sources */,
+				0294A3631ABC85B300B119B8 /* AppDelegate.m in Sources */,
+				0294A3601ABC85B300B119B8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0294A36F1ABC85B300B119B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0294A3751ABC85B300B119B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0294A3591ABC85B300B119B8 /* FinalProjectBulletPhysics */;
+			targetProxy = 0294A3741ABC85B300B119B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0294A3671ABC85B300B119B8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0294A3681ABC85B300B119B8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0294A36C1ABC85B300B119B8 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0294A36D1ABC85B300B119B8 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0294A37B1ABC85B300B119B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0294A37C1ABC85B300B119B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0294A37E1ABC85B300B119B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = BulletTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/BulletTest/bullet-2.82-r2704/Glut",
+					"$(PROJECT_DIR)/BulletTest/bullet-2.82-r2704/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.spollock.FinalProjectBulletPhysics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BulletTest/bullet-2.82-r2704/src";
+				USE_HEADERMAP = YES;
+			};
+			name = Debug;
+		};
+		0294A37F1ABC85B300B119B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = BulletTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/BulletTest/bullet-2.82-r2704/Glut",
+					"$(PROJECT_DIR)/BulletTest/bullet-2.82-r2704/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.spollock.FinalProjectBulletPhysics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/BulletTest/bullet-2.82-r2704/src";
+				USE_HEADERMAP = YES;
+			};
+			name = Release;
+		};
+		0294A3811ABC85B300B119B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BulletTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinalProjectBulletPhysics.app/FinalProjectBulletPhysics";
+			};
+			name = Debug;
+		};
+		0294A3821ABC85B300B119B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BulletTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinalProjectBulletPhysics.app/FinalProjectBulletPhysics";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0294A3551ABC85B300B119B8 /* Build configuration list for PBXProject "FinalProjectBulletPhysics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0294A37B1ABC85B300B119B8 /* Debug */,
+				0294A37C1ABC85B300B119B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0294A37D1ABC85B300B119B8 /* Build configuration list for PBXNativeTarget "FinalProjectBulletPhysics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0294A37E1ABC85B300B119B8 /* Debug */,
+				0294A37F1ABC85B300B119B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0294A3801ABC85B300B119B8 /* Build configuration list for PBXNativeTarget "FinalProjectBulletPhysicsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0294A3811ABC85B300B119B8 /* Debug */,
+				0294A3821ABC85B300B119B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0294A3521ABC85B300B119B8 /* Project object */;
+}
