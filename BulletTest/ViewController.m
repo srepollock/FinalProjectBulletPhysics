@@ -54,7 +54,8 @@ GLint uniforms[NUM_UNIFORMS];
     
     // Shape vertices, etc. and textures
     GLfloat *vertices, *normals, *texCoords;
-    GLuint numIndices, *indices;
+    GLuint spherenumIndices, *indices;
+    
     /* texture parameters ??? */
     GLuint crateTexture;
     
@@ -65,6 +66,15 @@ GLint uniforms[NUM_UNIFORMS];
     
 #pragma mark My Projects Variables
     BulletPhysics *bp;
+    GLfloat *squarevertices, *squarenormals, *squaretexCoords;
+    GLuint squarenumIndices, *squareindices;
+    GLuint _squarevertexArray;
+    GLuint _squarevertexBuffers[3];
+    GLuint _squareindexBuffer;
+    GLKMatrix4 _ballModelViewMatrix, _floorModelViewMatrix;
+    GLKMatrix3 _ballNormalMatrix, _floorNormalMatrix;
+    GLfloat _platformAngle;
+    GLuint sphereNumVerts, squareNumVerts;
 }
 
 @property (strong, nonatomic) EAGLContext *context;
@@ -98,6 +108,9 @@ GLint uniforms[NUM_UNIFORMS];
     // Set up UI parameters
     //    xRot = yRot = 30 * M_PI / 180;
     xRot = yRot = 0;
+    
+    // Set platform
+    _platformAngle = 0;
     
 #pragma mark - Bullet Physics init
     
@@ -171,28 +184,19 @@ GLint uniforms[NUM_UNIFORMS];
     glGenBuffers(1, &_indexBuffer);
     
     // Generate vertices
-    int numVerts;
-    //    numIndices = generateSphere(50, 1, &vertices, &normals, &texCoords, &indices, &numVerts);
-    numIndices = generateCube(1.5, &vertices, &normals, &texCoords, &indices, &numVerts);
+    spherenumIndices = generateSphere(50, 0.5, &vertices, &normals, &texCoords, &indices, &sphereNumVerts);
     
-    // Set up GL buffers
-    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffers[0]);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*3*numVerts, vertices, GL_STATIC_DRAW);
-    glEnableVertexAttribArray(GLKVertexAttribPosition);
-    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), BUFFER_OFFSET(0));
+    [self setupCircle:sphereNumVerts];
     
-    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffers[1]);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*3*numVerts, normals, GL_STATIC_DRAW);
-    glEnableVertexAttribArray(GLKVertexAttribNormal);
-    glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), BUFFER_OFFSET(0));
+    glGenVertexArraysOES(1, &_squarevertexArray);
+    glBindVertexArrayOES(_squarevertexArray);
     
-    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffers[2]);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*3*numVerts, texCoords, GL_STATIC_DRAW);
-    glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
-    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, 2*sizeof(float), BUFFER_OFFSET(0));
+    glGenBuffers(3, _squarevertexBuffers);
+    glGenBuffers(1, &_squareindexBuffer);
     
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int)*numIndices, indices, GL_STATIC_DRAW);
+    squarenumIndices = generateCube(1.5, &squarevertices, &squarenormals, &squaretexCoords, &squareindices, &squareNumVerts);
+    
+    [self setupSquare:squareNumVerts];
     
     glBindVertexArrayOES(0);
     
@@ -202,6 +206,48 @@ GLint uniforms[NUM_UNIFORMS];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, crateTexture);
     glUniform1i(uniforms[UNIFORM_TEXTURE], 0);
+}
+
+- (void) setupSquare:(int)verts {
+    // Set up GL buffers
+    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffers[0]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*3*verts, vertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(GLKVertexAttribPosition);
+    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), BUFFER_OFFSET(0));
+    
+    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffers[1]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*3*verts, normals, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(GLKVertexAttribNormal);
+    glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), BUFFER_OFFSET(0));
+    
+    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffers[2]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*3*verts, texCoords, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
+    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, 2*sizeof(float), BUFFER_OFFSET(0));
+    
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int)*spherenumIndices, indices, GL_STATIC_DRAW);
+}
+
+- (void)setupCircle:(int)verts {
+    // Set up GL buffers
+    glBindBuffer(GL_ARRAY_BUFFER, _squarevertexBuffers[0]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*3*verts, squarevertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(GLKVertexAttribPosition);
+    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), BUFFER_OFFSET(0));
+    
+    glBindBuffer(GL_ARRAY_BUFFER, _squarevertexBuffers[1]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*3*verts, squarenormals, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(GLKVertexAttribNormal);
+    glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), BUFFER_OFFSET(0));
+    
+    glBindBuffer(GL_ARRAY_BUFFER, _squarevertexBuffers[2]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*3*verts, squaretexCoords, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
+    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, 2*sizeof(float), BUFFER_OFFSET(0));
+    
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _squareindexBuffer);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int)*squarenumIndices, squareindices, GL_STATIC_DRAW);
 }
 
 - (void)tearDownGL
@@ -235,30 +281,13 @@ GLint uniforms[NUM_UNIFORMS];
 
 - (IBAction)doSingleTap:(UITapGestureRecognizer *)recognizer
 {
-    //    dragStart = [recognizer locationInView:self.view];
+    // drop ball
 }
-#pragma mark Rotate Cube
-- (IBAction)rotateObject:(UIRotationGestureRecognizer *)sender {
-    if (sender.state != UIGestureRecognizerStateEnded) {
-        GLfloat rot = [sender rotation];
-        xRot = (rot );
-    }
-}
-#pragma mark Zoom Cube
-- (IBAction)zoomObject:(UIPinchGestureRecognizer *)sender {
+- (IBAction)rotatePlatform:(UIRotationGestureRecognizer *)sender {
+    // rotate
     if (sender.state == UIGestureRecognizerStateChanged) {
-        
+        _platformAngle = [sender rotation]; // in rads
     }
-}
-#pragma mark Move Cube or Flashlight
-- (IBAction)moveObject:(UIPanGestureRecognizer *)sender {
-    if (sender.state == UIGestureRecognizerStateChanged) {
-        
-    }
-}
-#pragma mark - Switch Object Movement
-- (IBAction)switchObject:(UISwitch *)sender {
-    
 }
 
 
@@ -274,19 +303,35 @@ GLint uniforms[NUM_UNIFORMS];
     //    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
     
     // Set up model view matrix (place model in world)
-    _modelViewMatrix = GLKMatrix4Identity;
-    _modelViewMatrix = GLKMatrix4Rotate(_modelViewMatrix, xRot, 1.0f, 0.0f, 0.0f);
-    _modelViewMatrix = GLKMatrix4Rotate(_modelViewMatrix, yRot, 0.0f, 1.0f, 0.0f);
-    _modelViewMatrix = GLKMatrix4Rotate(_modelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
+    _ballModelViewMatrix = GLKMatrix4Identity;
+    // ball pos
+    _ballModelViewMatrix = GLKMatrix4Translate(_ballModelViewMatrix, bp->ballPos.x, bp->ballPos.y, bp->ballPos.z);
+    // floor pos
+    _floorModelViewMatrix = GLKMatrix4RotateZ(_floorModelViewMatrix, _platformAngle);
+    _floorModelViewMatrix = GLKMatrix4Scale(_floorModelViewMatrix, 7.0, 1.0, 5.0);
+    _floorModelViewMatrix = GLKMatrix4Translate(_floorModelViewMatrix, bp->floorPos.x, bp->floorPos.y, bp->floorPos.z);
+    
+    NSLog(@"%d, %d, %d", bp->ballPos.x, bp->ballPos.y, bp->ballPos.z);
+    
+    _modelViewMatrix = GLKMatrix4Multiply(_modelViewMatrix, _ballModelViewMatrix);
+    _modelViewMatrix = GLKMatrix4Multiply(_modelViewMatrix, _floorModelViewMatrix);
     _modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, _modelViewMatrix);
+    
+//    _modelViewMatrix = GLKMatrix4Identity;
+//    _modelViewMatrix = GLKMatrix4Rotate(_modelViewMatrix, xRot, 1.0f, 0.0f, 0.0f);
+//    _modelViewMatrix = GLKMatrix4Rotate(_modelViewMatrix, yRot, 0.0f, 1.0f, 0.0f);
+//    _modelViewMatrix = GLKMatrix4Rotate(_modelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
+//    _modelViewMatrix = GLKMatrix4Multiply(baseModelViewMatrix, _modelViewMatrix);
     
     // Calculate normal matrix
     _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(_modelViewMatrix), NULL);
     
     // Calculate projection matrix
-    float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
+    float aspect = fabs(self.view.bounds.size.width / self.view.bounds.size.height);
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100.0f);
     
+    _ballNormalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(_ballModelViewMatrix), NULL);
+    _floorNormalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(_floorModelViewMatrix), NULL);
     _modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, _modelViewMatrix);
 }
 
@@ -296,14 +341,15 @@ GLint uniforms[NUM_UNIFORMS];
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
+#pragma mark - Draw Sphere
     // Select VAO and shaders
     glBindVertexArrayOES(_vertexArray);
     glUseProgram(_program);
     
     // Set up uniforms
     glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, _modelViewProjectionMatrix.m);
-    glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, _normalMatrix.m);
-    glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEW_MATRIX], 1, 0, _modelViewMatrix.m);
+    glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, _ballNormalMatrix.m);
+    glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEW_MATRIX], 1, 0, _ballModelViewMatrix.m);
     /* set lighting parameters... */
     glUniform3fv(uniforms[UNIFORM_FLASHLIGHT_POSITION], 1, flashlightPosition.v);
     glUniform3fv(uniforms[UNIFORM_DIFFUSE_LIGHT_POSITION], 1, diffuseLightPosition.v);
@@ -312,9 +358,36 @@ GLint uniforms[NUM_UNIFORMS];
     glUniform4fv(uniforms[UNIFORM_SPECULAR_COMPONENT], 1, specularComponent.v);
     glUniform4fv(uniforms[UNIFORM_AMBIENT_COMPONENT], 1, ambientComponent.v);
     
+    [self setupCircle:sphereNumVerts];
+    
     // Select VBO and draw
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
-    glDrawElements(GL_TRIANGLES, numIndices, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, spherenumIndices, GL_UNSIGNED_INT, 0);
+    
+#pragma mark - Draw Floor
+    // Select VAO and shaders
+    glBindVertexArrayOES(_squarevertexArray);
+    glUseProgram(_program);
+    
+    // Set up uniforms
+    glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, _modelViewProjectionMatrix.m);
+    glUniformMatrix3fv(uniforms[UNIFORM_NORMAL_MATRIX], 1, 0, _floorNormalMatrix.m);
+    glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEW_MATRIX], 1, 0, _floorModelViewMatrix.m);
+    /* set lighting parameters... */
+    glUniform3fv(uniforms[UNIFORM_FLASHLIGHT_POSITION], 1, flashlightPosition.v);
+    glUniform3fv(uniforms[UNIFORM_DIFFUSE_LIGHT_POSITION], 1, diffuseLightPosition.v);
+    glUniform4fv(uniforms[UNIFORM_DIFFUSE_COMPONENT], 1, diffuseComponent.v);
+    glUniform1f(uniforms[UNIFORM_SHININESS], shininess);
+    glUniform4fv(uniforms[UNIFORM_SPECULAR_COMPONENT], 1, specularComponent.v);
+    glUniform4fv(uniforms[UNIFORM_AMBIENT_COMPONENT], 1, ambientComponent.v);
+    
+    [self setupSquare:squareNumVerts];
+    
+    // Select VBO and draw
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _squareindexBuffer);
+    glDrawElements(GL_TRIANGLES, squarenumIndices, GL_UNSIGNED_INT, 0);
+    
+    glBindVertexArrayOES(0);
 }
 
 #pragma mark -  OpenGL ES 2 shader compilation
@@ -352,8 +425,6 @@ GLint uniforms[NUM_UNIFORMS];
     glBindAttribLocation(_program, GLKVertexAttribPosition, "position");
     glBindAttribLocation(_program, GLKVertexAttribNormal, "normal");
     glBindAttribLocation(_program, GLKVertexAttribTexCoord0, "texCoordIn");
-#pragma mark - Flashlight
-    //    glBindAttribLocation(_program, GLKVertexAttribPosition, "flashlightPosition");
     
     // Link program.
     if (![self linkProgram:_program]) {

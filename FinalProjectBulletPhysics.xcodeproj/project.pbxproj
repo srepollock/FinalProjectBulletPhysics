@@ -18,6 +18,8 @@
 		0294A36E1ABC85B300B119B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0294A36C1ABC85B300B119B8 /* LaunchScreen.xib */; };
 		0294A3AE1ABC870A00B119B8 /* BulletPhysics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0294A3AD1ABC870A00B119B8 /* BulletPhysics.mm */; };
 		5847FE091E9EB2C400DC770F /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5847FE081E9EB2C400DC770F /* crate.jpg */; };
+		5847FE0D1E9EBB7100DC770F /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 5847FE0B1E9EBB7100DC770F /* Shader.fsh */; };
+		5847FE0E1E9EBB7100DC770F /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 5847FE0C1E9EBB7100DC770F /* Shader.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		0294A3AD1ABC870A00B119B8 /* BulletPhysics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BulletPhysics.mm; sourceTree = "<group>"; };
 		0294A3AF1ABC872100B119B8 /* BulletPhysics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BulletPhysics.h; sourceTree = "<group>"; };
 		5847FE081E9EB2C400DC770F /* crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crate.jpg; sourceTree = "<group>"; };
+		5847FE0B1E9EBB7100DC770F /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		5847FE0C1E9EBB7100DC770F /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		0294A35C1ABC85B300B119B8 /* BulletPhysics */ = {
 			isa = PBXGroup;
 			children = (
+				5847FE0A1E9EBB7100DC770F /* Shaders */,
 				5847FE081E9EB2C400DC770F /* crate.jpg */,
 				0294A3AF1ABC872100B119B8 /* BulletPhysics.h */,
 				0294A3AD1ABC870A00B119B8 /* BulletPhysics.mm */,
@@ -162,6 +167,15 @@
 				0294A3A91ABC869B00B119B8 /* libLinearMath_xcode4.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5847FE0A1E9EBB7100DC770F /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				5847FE0B1E9EBB7100DC770F /* Shader.fsh */,
+				5847FE0C1E9EBB7100DC770F /* Shader.vsh */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,8 +299,10 @@
 			files = (
 				0294A3691ABC85B300B119B8 /* Main.storyboard in Resources */,
 				0294A36E1ABC85B300B119B8 /* LaunchScreen.xib in Resources */,
+				5847FE0E1E9EBB7100DC770F /* Shader.vsh in Resources */,
 				0294A36B1ABC85B300B119B8 /* Images.xcassets in Resources */,
 				5847FE091E9EB2C400DC770F /* crate.jpg in Resources */,
+				5847FE0D1E9EBB7100DC770F /* Shader.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

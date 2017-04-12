@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BulletPhysics: NSObject
+struct Vector3 {
+    float x, y, z;
+} vec3;
+
+@interface BulletPhysics: NSObject {
+    @public
+    struct Vector3 ballPos;
+    struct Vector3 floorPos;
+}
 
 -(void)Update:(float)elapsedTime;
 
