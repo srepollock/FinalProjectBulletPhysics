@@ -7,31 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5847E26F1E9E9F8D00DC770F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5847E26E1E9E9F8D00DC770F /* main.m */; };
-		5847E2721E9E9F8D00DC770F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5847E2711E9E9F8D00DC770F /* AppDelegate.m */; };
-		5847E2741E9E9F8D00DC770F /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2731E9E9F8D00DC770F /* Shader.fsh */; };
-		5847E2761E9E9F8D00DC770F /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2751E9E9F8D00DC770F /* Shader.vsh */; };
-		5847E2791E9E9F8D00DC770F /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5847E2781E9E9F8D00DC770F /* GameViewController.m */; };
-		5847E27C1E9E9F8D00DC770F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5847E27A1E9E9F8D00DC770F /* Main.storyboard */; };
-		5847E27E1E9E9F8D00DC770F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5847E27D1E9E9F8D00DC770F /* Assets.xcassets */; };
-		5847E2811E9E9F8D00DC770F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5847E27F1E9E9F8D00DC770F /* LaunchScreen.storyboard */; };
-		5847E2891E9EA17100DC770F /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2881E9EA17100DC770F /* crate.jpg */; };
+		5847E2CF1E9EAB4300DC770F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5847E2C11E9EAB4300DC770F /* AppDelegate.m */; };
+		5847E2D01E9EAB4300DC770F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2C21E9EAB4300DC770F /* Assets.xcassets */; };
+		5847E2D11E9EAB4300DC770F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2C31E9EAB4300DC770F /* LaunchScreen.storyboard */; };
+		5847E2D21E9EAB4300DC770F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2C51E9EAB4300DC770F /* Main.storyboard */; };
+		5847E2D31E9EAB4300DC770F /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2C71E9EAB4300DC770F /* crate.jpg */; };
+		5847E2D41E9EAB4300DC770F /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5847E2C91E9EAB4300DC770F /* GameViewController.m */; };
+		5847E2D51E9EAB4300DC770F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2CA1E9EAB4300DC770F /* Info.plist */; };
+		5847E2D61E9EAB4300DC770F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5847E2CB1E9EAB4300DC770F /* main.m */; };
+		5847E2D71E9EAB4300DC770F /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2CD1E9EAB4300DC770F /* Shader.fsh */; };
+		5847E2D81E9EAB4300DC770F /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 5847E2CE1E9EAB4300DC770F /* Shader.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5847E26A1E9E9F8D00DC770F /* FinalProjectBulletPhysics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProjectBulletPhysics.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5847E26E1E9E9F8D00DC770F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5847E2701E9E9F8D00DC770F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5847E2711E9E9F8D00DC770F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5847E2731E9E9F8D00DC770F /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
-		5847E2751E9E9F8D00DC770F /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
-		5847E2771E9E9F8D00DC770F /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		5847E2781E9E9F8D00DC770F /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		5847E27B1E9E9F8D00DC770F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5847E27D1E9E9F8D00DC770F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5847E2801E9E9F8D00DC770F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5847E2821E9E9F8D00DC770F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5847E2881E9EA17100DC770F /* crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = crate.jpg; path = FinalProjectBulletPhysics/crate.jpg; sourceTree = "<group>"; };
+		5847E26A1E9E9F8D00DC770F /* FinalProjectCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProjectCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5847E2C01E9EAB4300DC770F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5847E2C11E9EAB4300DC770F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5847E2C21E9EAB4300DC770F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5847E2C41E9EAB4300DC770F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5847E2C61E9EAB4300DC770F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5847E2C71E9EAB4300DC770F /* crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crate.jpg; sourceTree = "<group>"; };
+		5847E2C81E9EAB4300DC770F /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		5847E2C91E9EAB4300DC770F /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		5847E2CA1E9EAB4300DC770F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5847E2CB1E9EAB4300DC770F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5847E2CD1E9EAB4300DC770F /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		5847E2CE1E9EAB4300DC770F /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +49,7 @@
 		5847E2611E9E9F8D00DC770F = {
 			isa = PBXGroup;
 			children = (
-				5847E2881E9EA17100DC770F /* crate.jpg */,
-				5847E26C1E9E9F8D00DC770F /* FinalProjectBulletPhysics */,
+				5847E2BF1E9EAB4300DC770F /* FinalProjectCube */,
 				5847E26B1E9E9F8D00DC770F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,43 +57,44 @@
 		5847E26B1E9E9F8D00DC770F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5847E26A1E9E9F8D00DC770F /* FinalProjectBulletPhysics.app */,
+				5847E26A1E9E9F8D00DC770F /* FinalProjectCube.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5847E26C1E9E9F8D00DC770F /* FinalProjectBulletPhysics */ = {
+		5847E2BF1E9EAB4300DC770F /* FinalProjectCube */ = {
 			isa = PBXGroup;
 			children = (
-				5847E2701E9E9F8D00DC770F /* AppDelegate.h */,
-				5847E2711E9E9F8D00DC770F /* AppDelegate.m */,
-				5847E2731E9E9F8D00DC770F /* Shader.fsh */,
-				5847E2751E9E9F8D00DC770F /* Shader.vsh */,
-				5847E2771E9E9F8D00DC770F /* GameViewController.h */,
-				5847E2781E9E9F8D00DC770F /* GameViewController.m */,
-				5847E27A1E9E9F8D00DC770F /* Main.storyboard */,
-				5847E27D1E9E9F8D00DC770F /* Assets.xcassets */,
-				5847E27F1E9E9F8D00DC770F /* LaunchScreen.storyboard */,
-				5847E2821E9E9F8D00DC770F /* Info.plist */,
-				5847E26D1E9E9F8D00DC770F /* Supporting Files */,
+				5847E2C01E9EAB4300DC770F /* AppDelegate.h */,
+				5847E2C11E9EAB4300DC770F /* AppDelegate.m */,
+				5847E2C21E9EAB4300DC770F /* Assets.xcassets */,
+				5847E2C31E9EAB4300DC770F /* LaunchScreen.storyboard */,
+				5847E2C51E9EAB4300DC770F /* Main.storyboard */,
+				5847E2C71E9EAB4300DC770F /* crate.jpg */,
+				5847E2C81E9EAB4300DC770F /* GameViewController.h */,
+				5847E2C91E9EAB4300DC770F /* GameViewController.m */,
+				5847E2CA1E9EAB4300DC770F /* Info.plist */,
+				5847E2CB1E9EAB4300DC770F /* main.m */,
+				5847E2CC1E9EAB4300DC770F /* Shaders */,
 			);
-			path = FinalProjectBulletPhysics;
+			path = FinalProjectCube;
 			sourceTree = "<group>";
 		};
-		5847E26D1E9E9F8D00DC770F /* Supporting Files */ = {
+		5847E2CC1E9EAB4300DC770F /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				5847E26E1E9E9F8D00DC770F /* main.m */,
+				5847E2CD1E9EAB4300DC770F /* Shader.fsh */,
+				5847E2CE1E9EAB4300DC770F /* Shader.vsh */,
 			);
-			name = "Supporting Files";
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5847E2691E9E9F8D00DC770F /* FinalProjectBulletPhysics */ = {
+		5847E2691E9E9F8D00DC770F /* FinalProjectCube */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5847E2851E9E9F8D00DC770F /* Build configuration list for PBXNativeTarget "FinalProjectBulletPhysics" */;
+			buildConfigurationList = 5847E2851E9E9F8D00DC770F /* Build configuration list for PBXNativeTarget "FinalProjectCube" */;
 			buildPhases = (
 				5847E2661E9E9F8D00DC770F /* Sources */,
 				5847E2671E9E9F8D00DC770F /* Frameworks */,
@@ -103,9 +104,9 @@
 			);
 			dependencies = (
 			);
-			name = FinalProjectBulletPhysics;
+			name = FinalProjectCube;
 			productName = FinalProjectBulletPhysics;
-			productReference = 5847E26A1E9E9F8D00DC770F /* FinalProjectBulletPhysics.app */;
+			productReference = 5847E26A1E9E9F8D00DC770F /* FinalProjectCube.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -123,7 +124,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5847E2651E9E9F8D00DC770F /* Build configuration list for PBXProject "FinalProjectBulletPhysics" */;
+			buildConfigurationList = 5847E2651E9E9F8D00DC770F /* Build configuration list for PBXProject "FinalProjectCube" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -136,7 +137,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5847E2691E9E9F8D00DC770F /* FinalProjectBulletPhysics */,
+				5847E2691E9E9F8D00DC770F /* FinalProjectCube */,
 			);
 		};
 /* End PBXProject section */
@@ -146,12 +147,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5847E27C1E9E9F8D00DC770F /* Main.storyboard in Resources */,
-				5847E2761E9E9F8D00DC770F /* Shader.vsh in Resources */,
-				5847E27E1E9E9F8D00DC770F /* Assets.xcassets in Resources */,
-				5847E2891E9EA17100DC770F /* crate.jpg in Resources */,
-				5847E2811E9E9F8D00DC770F /* LaunchScreen.storyboard in Resources */,
-				5847E2741E9E9F8D00DC770F /* Shader.fsh in Resources */,
+				5847E2D71E9EAB4300DC770F /* Shader.fsh in Resources */,
+				5847E2D81E9EAB4300DC770F /* Shader.vsh in Resources */,
+				5847E2D21E9EAB4300DC770F /* Main.storyboard in Resources */,
+				5847E2D01E9EAB4300DC770F /* Assets.xcassets in Resources */,
+				5847E2D11E9EAB4300DC770F /* LaunchScreen.storyboard in Resources */,
+				5847E2D51E9EAB4300DC770F /* Info.plist in Resources */,
+				5847E2D31E9EAB4300DC770F /* crate.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,29 +164,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5847E2721E9E9F8D00DC770F /* AppDelegate.m in Sources */,
-				5847E2791E9E9F8D00DC770F /* GameViewController.m in Sources */,
-				5847E26F1E9E9F8D00DC770F /* main.m in Sources */,
+				5847E2D41E9EAB4300DC770F /* GameViewController.m in Sources */,
+				5847E2D61E9EAB4300DC770F /* main.m in Sources */,
+				5847E2CF1E9EAB4300DC770F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5847E27A1E9E9F8D00DC770F /* Main.storyboard */ = {
+		5847E2C31E9EAB4300DC770F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5847E27B1E9E9F8D00DC770F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5847E27F1E9E9F8D00DC770F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5847E2801E9E9F8D00DC770F /* Base */,
+				5847E2C41E9EAB4300DC770F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5847E2C51E9EAB4300DC770F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5847E2C61E9EAB4300DC770F /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -284,9 +286,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FinalProjectBulletPhysics/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FinalProjectCube/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.spollock.FinalProjectBulletPhysics;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.spollock.FinalProjectCube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -295,9 +297,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = FinalProjectBulletPhysics/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FinalProjectCube/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.spollock.FinalProjectBulletPhysics;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.spollock.FinalProjectCube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -305,7 +307,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5847E2651E9E9F8D00DC770F /* Build configuration list for PBXProject "FinalProjectBulletPhysics" */ = {
+		5847E2651E9E9F8D00DC770F /* Build configuration list for PBXProject "FinalProjectCube" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5847E2831E9E9F8D00DC770F /* Debug */,
@@ -314,7 +316,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5847E2851E9E9F8D00DC770F /* Build configuration list for PBXNativeTarget "FinalProjectBulletPhysics" */ = {
+		5847E2851E9E9F8D00DC770F /* Build configuration list for PBXNativeTarget "FinalProjectCube" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5847E2861E9E9F8D00DC770F /* Debug */,

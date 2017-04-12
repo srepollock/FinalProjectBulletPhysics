@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FinalProjectBulletPhysics.xcscheme</key>
+		<key>FinalProjectBullet.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5847E2691E9E9F8D00DC770F</key>
+		<key>5847E2921E9EAAA200DC770F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
