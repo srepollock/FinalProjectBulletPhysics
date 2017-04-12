@@ -295,7 +295,9 @@ GLint uniforms[NUM_UNIFORMS];
 
 - (void)update
 {
-    if (!bp) return;
+    if (!bp) {
+        return;
+    }
     [bp Update:self.timeSinceLastUpdate];
     
     // Set up base model view matrix (place camera)
@@ -303,15 +305,15 @@ GLint uniforms[NUM_UNIFORMS];
     //    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotation, 0.0f, 1.0f, 0.0f);
     
     // Set up model view matrix (place model in world)
+    _modelViewMatrix = GLKMatrix4Identity;
     _ballModelViewMatrix = GLKMatrix4Identity;
+    _floorModelViewMatrix = GLKMatrix4Identity;
     // ball pos
     _ballModelViewMatrix = GLKMatrix4Translate(_ballModelViewMatrix, bp->ballPos.x, bp->ballPos.y, bp->ballPos.z);
     // floor pos
     _floorModelViewMatrix = GLKMatrix4RotateZ(_floorModelViewMatrix, _platformAngle);
     _floorModelViewMatrix = GLKMatrix4Scale(_floorModelViewMatrix, 7.0, 1.0, 5.0);
     _floorModelViewMatrix = GLKMatrix4Translate(_floorModelViewMatrix, bp->floorPos.x, bp->floorPos.y, bp->floorPos.z);
-    
-    NSLog(@"%d, %d, %d", bp->ballPos.x, bp->ballPos.y, bp->ballPos.z);
     
     _modelViewMatrix = GLKMatrix4Multiply(_modelViewMatrix, _ballModelViewMatrix);
     _modelViewMatrix = GLKMatrix4Multiply(_modelViewMatrix, _floorModelViewMatrix);

@@ -101,7 +101,8 @@
     ballPos.z = trans.getOrigin().getZ();
     
     btVector3 velocity = fallRigidBody->getLinearVelocity();
-    NSLog(@"velocity: %d, %d, %d", velocity.x(), velocity.y(), velocity.z());
+    NSLog(@"position: %f, %f, %f", ballPos.x, ballPos.y, ballPos.z);
+    NSLog(@"velocity: %f, %f, %f", velocity.x(), velocity.y(), velocity.z());
 //    ballRotation -= velocity.x() / 30.0;
     
     groundRigidBody->getMotionState()->getWorldTransform(trans);
